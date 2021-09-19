@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="160920211112" author="caio.nunes">
+        <createTable tableName="eventos_usuario">
+            <column name="id_usuario" type="int" >
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_eventos" type="int" >
+                <constraints primaryKey="true"/>
+            </column>
+
+        </createTable>
+
+
+    </changeSet>
+
+    <changeSet id="16092021120" author="caio.nunes">
+
+        <addForeignKeyConstraint baseTableName="eventos_usuario"
+                                 baseColumnNames="id_eventos"
+                                 constraintName="FK_TP_EVENTOS_USUARIO"
+                                 referencedTableName="eventos"
+                                 referencedColumnNames="id"/>
+
+
+
+    </changeSet>
+
+    <changeSet id="16092021122" author="caio.nunes">
+
+        <addForeignKeyConstraint baseTableName="eventos_usuario"
+                                 baseColumnNames="id_usuario"
+                                 constraintName="FK_TP_USUARIO_EVENTOS"
+                                 referencedTableName="usuario"
+                                 referencedColumnNames="id"/>
+
+
+
+    </changeSet>
+
+
+
+
+
+
+
+</databaseChangeLog>

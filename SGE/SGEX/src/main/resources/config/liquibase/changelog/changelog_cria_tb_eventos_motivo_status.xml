@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="160920210942" author="caio.nunes">
+
+        <createTable tableName="status">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="descricao" type="varchar(100)"/>
+
+        </createTable>
+
+
+    </changeSet>
+
+    <changeSet id="160920210953" author="caio.nunes">
+
+        <createTable tableName="motivo">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="descricao" type="varchar(100)"/>
+            <column name="titulo" type="varchar(30)"/>
+        </createTable>
+    </changeSet>
+
+
+
+
+    <changeSet id="160920211053" author="caio.nunes">
+
+
+
+
+
+        <createTable tableName="eventos">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="datadoevento" type="date"/>
+            <column name="id_motivo" type="int"/>
+            <column name="justificativa" type="varchar(100)"/>
+            <column name="id_status" type="int"/>
+            <column name="patrocinador" type="varchar(50)"/>
+        </createTable>
+
+    </changeSet>
+
+
+
+
+    <changeSet id="160920210958" author="caio.nunes">
+
+
+
+        <addForeignKeyConstraint baseTableName="eventos"
+                                 baseColumnNames="id_status"
+                                 constraintName="FK_TP_MOTIVO_EVENTOS"
+                                 referencedTableName="status"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="160920211012" author="caio.nunes">
+
+        <addForeignKeyConstraint baseTableName="eventos"
+                                 baseColumnNames="id_motivo"
+                                 constraintName="FK_TP_MOTIVO_MOTIVO"
+                                 referencedTableName="motivo"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+
+
+
+
+</databaseChangeLog>

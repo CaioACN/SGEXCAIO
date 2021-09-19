@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="160920211046" author="caio.nunes">
+
+        <createTable tableName="cargo">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="descricao" type="varchar(100)"/>
+
+        </createTable>
+
+
+    </changeSet>
+
+    <changeSet id="160920211047" author="caio.nunes">
+
+
+
+
+
+        <createTable tableName="usuario">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nome" type="varchar(30)"/>
+            <column name="email" type="varchar(30)"/>
+            <column name="foto" type="blob"/>
+            <column name="id_cargo" type="int"/>
+            <column name="cpf" type="varchar(11)"/>
+            <column name="datanascimento" type="date"/>
+            <column name="status" type="varchar(20)"/>
+        </createTable>
+
+    </changeSet>
+
+
+
+
+    <changeSet id="16092021056" author="caio.nunes">
+
+
+
+        <addForeignKeyConstraint baseTableName="usuario"
+                                 baseColumnNames="id_cargo"
+                                 constraintName="FK_TP_CARGO_USUARIO"
+                                 referencedTableName="cargo"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+
+
+
+
+
+</databaseChangeLog>
