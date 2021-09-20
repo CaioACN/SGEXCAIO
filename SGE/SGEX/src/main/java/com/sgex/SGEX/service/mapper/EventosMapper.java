@@ -10,11 +10,11 @@ import org.mapstruct.Mapping;
 
 //@JsonFormat(pattern = "dd/mm/yyyy")
 @Mapper(componentModel = "spring", uses = {UsuarioMapper.class, StatusMapper.class,MotivoMapper.class})
-public interface EventosMapper extends  EntityMapper<Eventos, EventosDTO> {
+public interface EventosMapper extends  EntityMapper<DropDownDTO, Eventos> {
 
     @Mapping(source ="id", target = "value")
-    @Mapping(source = "", target = "label")
-    EventosDTO toDto(Eventos eventos);
+    @Mapping(source = "patrocinador", target = "label")
+    DropDownDTO toDto(EventosDTO eventosDTO);
 
     @InheritInverseConfiguration
     Eventos toEntity(DropDownDTO dropDownDTOTO);

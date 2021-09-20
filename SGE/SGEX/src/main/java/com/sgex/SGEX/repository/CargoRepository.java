@@ -11,9 +11,9 @@ import java.util.List;
 
 @Repository
 public interface CargoRepository extends JpaRepository<Cargo, Long> {
-    List<Cargo> findAllByDescricacao(String descricacao);
+    List<Cargo> findAllByDescricao(String descricao);
 
-    @Query("FROM Cargo WHERE descricao LIKE %:descricacao")
+    @Query("FROM Cargo WHERE descricao LIKE %:descricao")
     List<Cargo> encontrarTodosPorDescricao(@Param("descricao") String descricacao);
 
     @Query("SELECT new com.sgex.SGEX.service.dto.DropDownDTO(r.id,r.descricao) from Cargo r order by r.descricao asc")
