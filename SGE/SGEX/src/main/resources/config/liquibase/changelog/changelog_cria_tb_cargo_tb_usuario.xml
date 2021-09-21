@@ -29,9 +29,9 @@
             </column>
             <column name="nome" type="varchar(30)"/>
             <column name="email" type="varchar(30)"/>
-            <column name="foto" type="blob"/>
+
             <column name="id_cargo" type="int"/>
-            <column name="cpf" type="varchar(11)"/>
+            <column name="cpf" type="varchar(16)"/>
             <column name="datanascimento" type="date"/>
             <column name="status" type="varchar(20)"/>
         </createTable>

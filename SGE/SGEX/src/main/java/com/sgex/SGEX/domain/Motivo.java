@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "motivo")
@@ -24,7 +25,6 @@ public class Motivo {
 
     @Column(name = "titulo")
     private String titulo;
-
 
 
 

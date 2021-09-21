@@ -4,9 +4,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class EventosNaoEcontradoException extends RuntimeException {
+public class ObjectNotFound extends RuntimeException{
 
-    public EventosNaoEcontradoException(String s) {
+
+    public ObjectNotFound()
+    {
+        super();
+    }
+
+    public ObjectNotFound(String s)
+    {
         super(s);
     }
+
 }
