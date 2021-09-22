@@ -29,12 +29,8 @@ public class Usuario {
     @Column(name = "email")
     private String email;
 
-    @Lob
-    @Column(name = "foto")
-    private Byte [] foto;
-
     @Column(name = "cpf")
-    private  int cpf;
+    private  Integer cpf;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_cargo")
@@ -42,7 +38,7 @@ public class Usuario {
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     @Column(columnDefinition = "datanascimento")
-    private LocalDateTime dataNascimento;
+    private LocalDateTime datanascimento;
 
     @Column(name = "status")
     private  String status;
@@ -53,5 +49,5 @@ public class Usuario {
     }, inverseJoinColumns = {
             @JoinColumn(name="id_eventos")
     })
-    private List<Eventos> eventos;
+    private List<Evento> listaEvento;
 }

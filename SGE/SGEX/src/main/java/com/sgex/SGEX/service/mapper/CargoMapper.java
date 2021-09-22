@@ -1,21 +1,21 @@
 package com.sgex.SGEX.service.mapper;
 
 import com.sgex.SGEX.domain.Cargo;
-import com.sgex.SGEX.service.dto.DropDownDTO;
+import com.sgex.SGEX.service.dto.SelectDTO;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 
-@Mapper(componentModel = "spring", uses = UsuarioMapper.class)
-public interface CargoMapper extends  EntityMapper<DropDownDTO, Cargo> {
+@Mapper(componentModel = "spring", uses ={})
+public interface CargoMapper extends  EntityMapper<SelectDTO, Cargo> {
 
     @Mapping(source ="id", target = "value")
     @Mapping(source = "descricao", target = "label")
-    DropDownDTO toDto(Cargo cargo);
+    SelectDTO toDto(Cargo cargo);
 
     @InheritInverseConfiguration
-    Cargo toEntity(DropDownDTO dropDownDTOTO);
+    Cargo toEntity(SelectDTO selectDTO);
 
 
 }

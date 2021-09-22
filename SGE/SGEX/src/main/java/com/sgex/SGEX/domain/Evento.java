@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 
 
-public class Eventos {
+public class Evento {
 
 
     @Id
@@ -24,7 +24,7 @@ public class Eventos {
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     @Column(columnDefinition = "datadoevento")
-    private LocalDateTime dataDoEvento;
+    private LocalDateTime datadoevento;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_motivo")
@@ -46,7 +46,8 @@ public class Eventos {
     }, inverseJoinColumns = {
             @JoinColumn(name="id_eventos")
     })
-    private List<Usuario> usuarios;
+    private List<Usuario> listaEvento;
+
 
 
 

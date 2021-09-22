@@ -7,6 +7,7 @@ import com.sgex.SGEX.domain.Usuario;
 import lombok.*;
 
 import javax.persistence.Column;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class EventosDTO {
+public class EventoDTO implements Serializable {
 
     private Long id;
 
@@ -24,7 +25,7 @@ public class EventosDTO {
     private String justificativa;
     private Status status;
     private  String patrocinador;
-    private List<Usuario> usuarios;
+    private List<Usuario> listausuario;
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     @Column(columnDefinition = "datadoevento")

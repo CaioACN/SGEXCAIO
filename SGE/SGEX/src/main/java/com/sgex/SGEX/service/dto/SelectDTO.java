@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DropDownDTO extends CargoDTO implements Serializable {
+public class SelectDTO  implements Serializable {
 
     private Long value;
 
